@@ -3,6 +3,7 @@ import MenuItem from './MenuItem'
 import { AiFillHome } from "react-icons/ai";
 import { IoInformationCircle } from "react-icons/io5";
 import Link from 'next/link';
+import ThemeSwitch from './ThemeSwitch';
 export default function Navbar() {
     
     return <>
@@ -13,9 +14,13 @@ export default function Navbar() {
             <MenuItem title='About' pathname="/about" Icon={IoInformationCircle} />
         </div>
 
-        <div className='flex gap-1 p-4 items-center'>
+        <div className='flex gap-3 p-4 items-center'>
+            <ThemeSwitch/>
+            <div>
             <Link href={'/'} className='p-2 bg-amber-500 rounded-lg  text-lg font-bold'>IMDb</Link>
             <span className='hidden sm:inline'>By  <span className='font-bold'>M11</span></span>
+            </div>
+            
         </div>
 
 

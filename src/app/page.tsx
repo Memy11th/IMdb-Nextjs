@@ -3,6 +3,6 @@ export default function Home() {
 
   return <>
 
-  <p>Hello</p>
+  <p>M11 by Memy11th</p>
   </>
 }
