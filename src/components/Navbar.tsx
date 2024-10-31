@@ -2,10 +2,11 @@ import React from 'react'
 import MenuItem from './MenuItem'
 import { AiFillHome } from "react-icons/ai";
 import { IoInformationCircle } from "react-icons/io5";
+import Link from 'next/link';
 export default function Navbar() {
     
     return <>
-    <div className='flex justify-between bg-slate-200 '>
+    <div className='flex justify-between items-center max-w-6xl mx-auto  '>
 
         <div className='flex gap-3 p-3 text-center items-center'>
             <MenuItem title='Home' pathname="/" Icon={AiFillHome} />
@@ -13,9 +14,8 @@ export default function Navbar() {
         </div>
 
         <div className='flex gap-1 p-4 items-center'>
-            <span className='p-2 bg-amber-400 rounded-lg  text-lg font-bold'>IMDb</span>
-            <span className='hidden sm:inline'>By M11</span>
-
+            <Link href={'/'} className='p-2 bg-amber-500 rounded-lg  text-lg font-bold'>IMDb</Link>
+            <span className='hidden sm:inline'>By  <span className='font-bold'>M11</span></span>
         </div>
 
 
