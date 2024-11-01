@@ -18,9 +18,8 @@ export default async function Home({searchParams}:SearchParamsI) {
   try {
     const response = await fetch(
       `https://api.themoviedb.org/3${genre === 'fetchTopRated' ? '/movie/top_rated' : '/trending/movie/week'}?api_key=${API_KEY}&language=en-US&page=1`,{
-        cache:'no-cache',
         next:{
-          revalidate:60
+          revalidate:600
         }
       });
 
@@ -38,9 +37,9 @@ export default async function Home({searchParams}:SearchParamsI) {
   }
 
   return (
-    <div className="max-w-6xl mt-3 mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+    <div className="max-w-6xl mt-3 mx-auto grid grid-cols-1 sm:grid-cols-3 md:grid-cols-4 gap-5 ">
       {results.map((result: Result) => (
-        <MovieCard key={result.id} result={result} />
+        <MovieCard key={result.id} result={result}  />
       ))}
     </div>
   );
