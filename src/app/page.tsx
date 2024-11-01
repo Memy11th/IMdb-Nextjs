@@ -1,3 +1,4 @@
+import MovieCard from "@/components/MovieCard";
 
 interface SearchParams {
   genre: string;
@@ -7,6 +8,7 @@ const API_KEY = process.env.API_KEY;
 
 export default async function Home(searchParams: SearchParams) {
   const genre = searchParams.genre || 'fetchTrending';
+  let results = []
 
   try {
     const response = await fetch(
@@ -23,8 +25,10 @@ export default async function Home(searchParams: SearchParams) {
       throw new Error(`API error: ${errorData.status_message}`);
     }
 
-    const {results} = await response.json();
+    const data = await response.json();
+    results = data.results;
     console.log(results)
+  
   } catch (err) {
     console.error('Fetch error:', err);
     throw err;
@@ -32,7 +36,8 @@ export default async function Home(searchParams: SearchParams) {
 
   return (
     <div className="max-w-6xl mx-auto">
-      
+      {results.map((result)=> <MovieCard key={result.id} result = {result} />)}
+      <MovieCard  />
     </div>
   );
 }
