@@ -2,27 +2,9 @@
 import React from 'react'
 import Image from 'next/image'
 import { FaStar } from "react-icons/fa";
-interface PassedToComp {
-movie : Movie
-}
+import { PassedToComp } from '@/interfaces/passedToMoviePage';
 
-interface Movie{
-    adult:boolean,
-    backdrop_path:string,
-    belongs_to_collection ? : string,
-    budget:number,
-    status:string,
-    release_date:string,
-    title:string,
-    video:boolean,
-    overview:string,
-    homepage:string,
-    original_title:string,
-    poster_path:string,
-    genre: string |  [],
-    vote_average:number,
-    vote_count:number
-}
+
 
 export default function MoviePage({movie}:PassedToComp) {
     function handleClick(){
@@ -44,7 +26,7 @@ export default function MoviePage({movie}:PassedToComp) {
             <span>({movie.vote_count})</span>
         </div>
         <p> released on : <span className='text-amber-500 '>{movie.release_date}</span></p>
-        <button onClick={handleClick} className='p-2 mt-3 text-lg bg-slate-300 hover:bg-slate-400 dark:bg-amber-500 rounded-lg dark:hover:bg-amber-600 '>Watch the movie</button>
+        <button onClick={handleClick} className='p-2 mt-3 text-lg bg-slate-300 hover:bg-slate-200 dark:bg-amber-500 rounded-lg dark:hover:bg-amber-600 '>Watch the movie</button>
 
         </div>
 
