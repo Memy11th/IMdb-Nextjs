@@ -4,10 +4,19 @@ import Image from 'next/image'
 
 export default function MovieCard({result}:ResultsPassedToMovieCard) {
     return <>
-    <div className='rounded-xl max-w-6xl  my-2 mx-auto w-full '>
+    <div className='rounded-xl  p-1  my-2 mx-auto w-full '>
         <Image alt={result.title}  src={`https://image.tmdb.org/t/p/w500/${result.poster_path}`} width={275} height={100} className="rounded-lg mx-auto  cursor-pointer" />
-        <h3 className='truncate font-semibold ms-2  '>{result.title}</h3>
-        <p className='truncate text-xs font-semibold ms-2  ' >{result.overview}</p>
+        <h3 className='truncate font-semibold  '>{result.title}</h3>
+        <p className='line-clamp-2 text-xs font-semibold  ' >{result.overview}</p>
+        <div className='flex gap-3 mt-1 '>
+            <button className='p-2 bg-green-700 hover:bg-green-900 dark:bg-gray-800 dark:hover:bg-gray-900 rounded-lg w-2/3 transition-all duration-200 '>
+                Add to watchlist
+            </button>
+            <button className='p-2 bg-yellow-400 hover:bg-yellow-500 dark:bg-amber-500 dark:hover:bg-amber-600 transition-all duration-200 rounded-lg w-1/2 '>
+                Learn more
+            </button>
+        </div>
+        
     </div>
     
     </>

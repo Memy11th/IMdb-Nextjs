@@ -12,14 +12,14 @@ interface SearchParamsI {
 const API_KEY = process.env.API_KEY;
 
 export default async function Home({searchParams}:SearchParamsI) {
-  const genre = searchParams.genre ;
+  const genre = await searchParams.genre ;
   let results = []
 
   try {
     const response = await fetch(
       `https://api.themoviedb.org/3${genre === 'fetchTopRated' ? '/movie/top_rated' : '/trending/movie/week'}?api_key=${API_KEY}&language=en-US&page=1`,{
         next:{
-          revalidate:600
+          revalidate:6
         }
       });
 
