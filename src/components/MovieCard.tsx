@@ -3,7 +3,9 @@ import { ResultsPassedToMovieCard } from '@/interfaces/MovieCardResults'
 import Image from 'next/image'
 import Link from 'next/link'
 
-export default function MovieCard({result}:ResultsPassedToMovieCard) {
+export default  function MovieCard({result}:ResultsPassedToMovieCard) {
+
+
     
     return <>
     <div className='rounded-xl  p-1  my-2 mx-auto w-full '>
