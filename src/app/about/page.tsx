@@ -3,7 +3,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
     title: "About us",
-    description: "The about page , that shows every single piece of info you need about us",
+    description: "The about page , that shows every single piece of info you need about the web app",
   };
 export default function page() {
     return <>
