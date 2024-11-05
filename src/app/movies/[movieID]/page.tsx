@@ -1,5 +1,6 @@
 import MoviePage from '@/components/MoviePage';
 import React from 'react';
+
 const API_KEY = process.env.API_KEY;
 
 interface Params{

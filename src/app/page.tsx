@@ -1,6 +1,12 @@
 import MovieCard from "@/components/MovieCard";
 import PaginationControls from "@/components/Pagination";
 import { Result } from "@/interfaces/resultsType";
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Movies",
+    description: "Pick your movie for the weekend's movie night , one of the biggest movie libraries that helps you choose wisely ",
+  };
 
 interface SearchParams {
   genre: string;

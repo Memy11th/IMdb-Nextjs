@@ -1,6 +1,12 @@
 'use client'
 import React from 'react'
 import { DNA } from 'react-loader-spinner'
+import type { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Loading",
+    description: "Loading",
+  };
 
 export default function loading() {
     return <>

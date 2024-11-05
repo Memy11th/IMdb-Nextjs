@@ -11,7 +11,6 @@ interface PaginationControlsProps {
 
 function PaginationControls({ totalPages, currentPage, genre }: PaginationControlsProps) {
 
-    const userPreference = localStorage.getItem('theme');
 
 
     
@@ -28,14 +27,14 @@ function PaginationControls({ totalPages, currentPage, genre }: PaginationContro
         justifyContent: 'center',
         alignItems: 'center',
         padding: '3px',
-        borderRadius: '15px',
+        borderRadius: '20px',
         '& .MuiPaginationItem-root': {
           color: 'text.primary', // Adjust text color based on the theme
         },
       }}
       renderItem={(item) => (
         <PaginationItem
-          className='dark:bg-amber-600 dark:hover:bg-amber-700 ' // Background color for dark mode
+          className='dark:bg-amber-600 dark:hover:bg-amber-700 rounded-full ' // Background color for dark mode
           component={Link}
           href={`/?genre=${genre}&page=${item.page}`}
           {...item}
